@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: 8px solid #ccc;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Hide the preloader when content is loaded */
+  .content-loaded .preloader-container {
+    display: none;
+  }
+</style>
+</head>
+<body>
+<div class="preloader-container">
+  <div class="preloader">
+    <img src="./logo.png" style="width: 110px; margin-left: 40px;">
+  </div>
+</div>
+<div class="content-loaded">
+  
+</div>
+<script>
+
+  window.addEventListener("load", function() {
+    setTimeout(function() {
+      document.querySelector(".content-loaded").classList.add("content-loaded");
+    }, 2000); // Simulating a 2-second loading time
+  });
+</script>
+</body>
+</html>
